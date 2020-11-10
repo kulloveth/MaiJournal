@@ -2,23 +2,23 @@
   "category": [
     {
       "name": "News",
-      "icon": ""
+      "icon": "R.drawable.newspaper"
     },
     {
       "name": "Code",
-      "icon": ""
+      "icon": "R.drawable.code"
     },
     {
       "name": "Nigeria",
-      "icon": ""
+      "icon": "R.drawable.nigeria"
     },
     {
       "name": "Personal",
-      "icon": ""
+      "icon": "R.drawable.personal"
     },
     {
       "name": "Random",
-      "icon": ""
+      "icon": "R.drawable.random"
     }
   ]
 }

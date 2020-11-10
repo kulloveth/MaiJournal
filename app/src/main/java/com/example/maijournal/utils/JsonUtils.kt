@@ -8,6 +8,7 @@ import com.google.gson.Gson
 object JsonUtils {
     private val TAG = JsonUtils::class.simpleName
 
+
     fun readCategories(context: Context){
         val jsonString =
             context.applicationContext.assets.open("categories.json").bufferedReader()
