@@ -9,11 +9,12 @@ object JsonUtils {
     private val TAG = JsonUtils::class.simpleName
 
 
-    fun readCategories(context: Context){
+    fun readCategories(context: Context):Category{
         val jsonString =
             context.applicationContext.assets.open("categories.json").bufferedReader()
                 .use { it.readText() }
         val category = Gson().fromJson(jsonString, Category::class.java)
         Log.d(TAG,""+category)
+        return category
     }
 }
