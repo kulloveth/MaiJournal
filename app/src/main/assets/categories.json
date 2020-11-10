@@ -1,0 +1,24 @@
+{
+  "category": [
+    {
+      "name": "News",
+      "icon": ""
+    },
+    {
+      "name": "Code",
+      "icon": ""
+    },
+    {
+      "name": "Nigeria",
+      "icon": ""
+    },
+    {
+      "name": "Personal",
+      "icon": ""
+    },
+    {
+      "name": "Random",
+      "icon": ""
+    }
+  ]
+}
