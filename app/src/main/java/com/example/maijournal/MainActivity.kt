@@ -6,15 +6,17 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.example.maijournal.app.JournalApp
-import com.example.maijournal.ui.CategoryViewModel
-import com.example.maijournal.ui.CategoryViewModelFactory
+import com.example.maijournal.ui.category.CategoryViewModel
+import com.example.maijournal.ui.category.CategoryViewModelFactory
 import com.example.maijournal.utils.JsonUtils
 
 class MainActivity : AppCompatActivity() {
     private val TAG = MainActivity::class.simpleName
+
     private val viewModel: CategoryViewModel by viewModels{
         CategoryViewModelFactory((application as JournalApp).repository)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

@@ -1,4 +1,4 @@
-package com.example.maijournal.ui
+package com.example.maijournal.ui.category
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

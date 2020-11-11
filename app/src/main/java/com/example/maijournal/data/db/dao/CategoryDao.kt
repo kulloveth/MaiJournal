@@ -1,4 +1,4 @@
-package com.example.maijournal.data.db
+package com.example.maijournal.data.db.dao
 
 import androidx.room.Dao
 import androidx.room.Insert

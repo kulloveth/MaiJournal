@@ -1,6 +1,6 @@
 package com.example.maijournal.data
 
-import com.example.maijournal.data.db.CategoryDao
+import com.example.maijournal.data.db.dao.CategoryDao
 import com.example.maijournal.data.model.CategoryX
 
 class JournalRepository(private val categoryDao: CategoryDao) {

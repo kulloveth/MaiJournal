@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.maijournal.data.db.dao.CategoryDao
 import com.example.maijournal.data.model.CategoryX
 import com.example.maijournal.utils.JsonUtils
 import kotlinx.coroutines.CoroutineScope
@@ -19,7 +20,6 @@ abstract class JournalDatabase : RoomDatabase() {
         private var INSTANCE: JournalDatabase? = null
 
         fun getDatabase(context: Context, scope: CoroutineScope): JournalDatabase {
-
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,

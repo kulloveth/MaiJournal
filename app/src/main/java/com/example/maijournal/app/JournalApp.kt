@@ -9,6 +9,7 @@ import kotlinx.coroutines.SupervisorJob
 class JournalApp : Application() {
 
     val applicationScope = CoroutineScope(SupervisorJob())
+
     override fun onCreate() {
         super.onCreate()
     }
