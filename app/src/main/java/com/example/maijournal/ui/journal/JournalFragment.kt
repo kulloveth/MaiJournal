@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.maijournal.R
+import com.example.maijournal.databinding.FragmentJournalBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +25,8 @@ class JournalFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var binding: FragmentJournalBinding? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,7 +40,16 @@ class JournalFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_journal, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_journal, container, false)
+        return binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+      binding?.addJournalFab?.setOnClickListener {
+          requireView().findNavController().navigate(R.id.action_journalFragment_to_addEditJournalFragment)
+      }
     }
 
     companion object {
