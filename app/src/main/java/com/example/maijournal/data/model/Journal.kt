@@ -10,5 +10,6 @@ data class Journal(
     @ColumnInfo(name = "category") val categoryX: CategoryX,
     val title: String,
     val desc: String,
-    val detail:String
+    val detail:String,
+    val updatedAt:String
 )

@@ -42,6 +42,7 @@ dependencies {
     implementation "androidx.activity:activity-ktx:$rootProject.activityVersion"
     //Room
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 
