@@ -43,7 +43,7 @@
             android:layout_marginTop="@dimen/standard_padding"
             android:layout_marginEnd="@dimen/standard_padding"
             android:hint="Journal Title"
-            android:minHeight="60dp"
+            android:minHeight="@dimen/view_height"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/currentTime">
@@ -52,7 +52,6 @@
                 android:id="@+id/titleTv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:maxLines="2" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,7 +63,7 @@
             android:layout_marginTop="@dimen/standard_padding"
             android:layout_marginEnd="@dimen/standard_padding"
             android:hint="Journal Description"
-            android:minHeight="60dp"
+            android:minHeight="@dimen/view_height"
             app:layout_constraintTop_toBottomOf="@+id/titleTvIl">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -82,7 +81,7 @@
             android:layout_marginTop="@dimen/standard_padding"
             android:layout_marginEnd="@dimen/standard_padding"
             android:hint="Journal Detail"
-            android:minHeight="60dp"
+            android:minHeight="@dimen/view_height"
             app:layout_constraintTop_toBottomOf="@+id/descTvIl">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -95,7 +94,7 @@
             android:id="@+id/categoriesIl"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/view_height"
             android:layout_marginStart="@dimen/standard_padding"
             android:layout_marginTop="@dimen/standard_padding"
             android:layout_marginEnd="@dimen/standard_padding"
@@ -105,14 +104,15 @@
             <AutoCompleteTextView
                 android:id="@+id/categoriesTv"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="match_parent"
+                android:visibility="gone"
                 android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/view_height"
             android:layout_marginTop="@dimen/standard_padding"
             android:text="Save Journal"
             app:layout_constraintEnd_toEndOf="parent"
