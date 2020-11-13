@@ -9,9 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.maijournal.app.JournalApp
 import com.example.maijournal.databinding.FragmentAddEditJournalBinding
+import com.example.maijournal.ui.category.CategoryAdapter
 import com.example.maijournal.ui.category.CategoryViewModel
 import com.example.maijournal.ui.category.CategoryViewModelFactory
-import com.example.maijournal.utils.CategoryAdapter
 
 class AddEditJournalFragment : Fragment() {
     private var binding: FragmentAddEditJournalBinding? = null
@@ -32,7 +32,8 @@ class AddEditJournalFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.fetchCategory().observe(requireActivity(), Observer {
             val adapter = CategoryAdapter(
-                requireContext(), it)
+                requireContext(), it
+            )
             binding?.categoriesTv?.setAdapter(adapter)
 
         })

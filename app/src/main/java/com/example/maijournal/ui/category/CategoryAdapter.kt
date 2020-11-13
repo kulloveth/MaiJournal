@@ -1,4 +1,4 @@
-package com.example.maijournal.utils
+package com.example.maijournal.ui.category
 
 
 import android.content.Context
