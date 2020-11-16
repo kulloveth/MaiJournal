@@ -6,14 +6,17 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.maijournal.data.db.dao.CategoryDao
+import com.example.maijournal.data.db.dao.JournalDao
 import com.example.maijournal.data.model.CategoryX
+import com.example.maijournal.data.model.Journal
 import com.example.maijournal.utils.JsonUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities = [CategoryX::class], version = 1)
+@Database(entities = [CategoryX::class,Journal::class], version = 1)
 abstract class JournalDatabase : RoomDatabase() {
     abstract fun categoryDao(): CategoryDao
+    abstract fun journalDao():JournalDao
 
     companion object {
         @Volatile

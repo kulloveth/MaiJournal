@@ -12,6 +12,5 @@ class CategoryViewModelFactory(private val repository: JournalRepository):ViewMo
                 repository
             ) as T
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
+        throw IllegalArgumentException("Unknown ViewModel class") }
 }
