@@ -15,5 +15,5 @@ class JournalApp : Application() {
     }
 
     val database by lazy { JournalDatabase.getDatabase(this,applicationScope) }
-    val repository by lazy { JournalRepository(database.categoryDao()) }
+    val repository by lazy { JournalRepository(database.categoryDao(),database.journalDao()) }
 }

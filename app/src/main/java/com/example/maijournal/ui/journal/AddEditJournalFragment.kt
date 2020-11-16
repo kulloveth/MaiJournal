@@ -11,17 +11,21 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.maijournal.app.JournalApp
 import com.example.maijournal.data.model.CategoryX
+import com.example.maijournal.data.model.Journal
 import com.example.maijournal.databinding.FragmentAddEditJournalBinding
 import com.example.maijournal.ui.category.CategoryAdapter
 import com.example.maijournal.ui.category.CategoryViewModel
 import com.example.maijournal.ui.category.CategoryViewModelFactory
+import java.util.*
 
 class AddEditJournalFragment : Fragment() {
     private var binding: FragmentAddEditJournalBinding? = null
     private val viewModel: CategoryViewModel by viewModels {
         CategoryViewModelFactory((requireContext().applicationContext as JournalApp).repository)
     }
-
+    private val jViewModel: JournalViewModel by viewModels {
+        JournalViewModelFactory((requireContext().applicationContext as JournalApp).repository)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,6 +52,19 @@ class AddEditJournalFragment : Fragment() {
                     binding?.categoriesTv?.setCompoundDrawablesRelativeWithIntrinsicBounds(res,0,0,0)
                 }
             } })
+        binding?.saveJournal?.setOnClickListener {
+            saveJournal()
+        }
+    }
+
+    fun saveJournal(){
+        val date = Date().toString()
+        binding?.currentTime?.text=date
+      val journal = Journal(category = binding?.categoriesTv?.text?.toString(),title = binding?.titleTv?.text?.toString(),
+          desc = binding?.descTv?.text?.toString(),detail = binding?.detailTv?.text?.toString(),updatedAt = date)
+
+        jViewModel.saveJournal(journal)
+
     }
 
 }

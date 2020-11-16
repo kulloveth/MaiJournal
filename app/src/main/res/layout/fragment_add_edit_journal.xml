@@ -116,6 +116,7 @@
             android:layout_height="@dimen/view_height"
             android:layout_marginTop="@dimen/standard_padding"
             android:text="Save Journal"
+            android:id="@+id/saveJournal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/categoriesIl" />
