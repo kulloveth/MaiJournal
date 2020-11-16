@@ -70,7 +70,7 @@
                 android:id="@+id/descTv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:maxLines="4" />
+                android:maxLines="3" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -87,6 +87,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/detailTv"
                 android:layout_width="match_parent"
+                android:inputType="textMultiLine"
                 android:layout_height="match_parent" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,7 +106,7 @@
                 android:id="@+id/categoriesTv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="gone"
+                android:drawablePadding="@dimen/standard_padding"
                 android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>

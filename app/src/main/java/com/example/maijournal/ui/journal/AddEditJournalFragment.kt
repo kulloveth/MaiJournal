@@ -1,13 +1,16 @@
 package com.example.maijournal.ui.journal
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.maijournal.app.JournalApp
+import com.example.maijournal.data.model.CategoryX
 import com.example.maijournal.databinding.FragmentAddEditJournalBinding
 import com.example.maijournal.ui.category.CategoryAdapter
 import com.example.maijournal.ui.category.CategoryViewModel
@@ -35,11 +38,16 @@ class AddEditJournalFragment : Fragment() {
                 requireContext(), it
             )
             binding?.categoriesTv?.setAdapter(adapter)
-
-        })
-
-
-        //actv.setTextColor(Color.RED)
+            binding?.categoriesTv?.setOnItemClickListener { parent, view, position, id ->
+                val item = parent.getItemAtPosition(position)
+                if (item is CategoryX) {
+                    binding?.categoriesTv?.setText(item.name)
+                    val res = requireContext().resources.getIdentifier(item.icon,"drawable",requireContext().packageName)
+                    val drawable = ContextCompat.getDrawable(requireContext(),res)
+                    Log.d("TAG", "onViewCreated: $drawable")
+                    binding?.categoriesTv?.setCompoundDrawablesRelativeWithIntrinsicBounds(res,0,0,0)
+                }
+            } })
     }
 
 }
