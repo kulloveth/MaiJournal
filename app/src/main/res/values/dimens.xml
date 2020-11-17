@@ -2,4 +2,5 @@
 <resources>
     <dimen name="standard_padding">16dp</dimen>
     <dimen name="view_height">60dp</dimen>
+    <dimen name="half_padding">8dp</dimen>
 </resources>

@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
 
     <ImageView
+        android:id="@+id/categoryIv"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/categoryIv"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="@dimen/standard_padding"
         android:layout_marginLeft="@dimen/standard_padding"
         android:layout_marginTop="8dp"
         android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_baseline_note_add_24" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="category"
         android:id="@+id/categoryTv"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/standard_padding"
         android:layout_marginLeft="@dimen/standard_padding"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintBottom_toBottomOf="@id/categoryIv"
         app:layout_constraintStart_toEndOf="@id/categoryIv"
         app:layout_constraintTop_toTopOf="@id/categoryIv"
-        app:layout_constraintBottom_toBottomOf="@id/categoryIv"/>
+        tools:text="category" />
+
+    <TextView
+        android:id="@+id/categoryDescTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/categoryTv"
+        app:layout_constraintTop_toBottomOf="@id/categoryTv"
+        android:layout_marginTop="@dimen/half_padding"
+        tools:text="journal descripiton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
