@@ -30,13 +30,6 @@
         app:layout_constraintTop_toTopOf="@id/categoryIv"
         tools:text="category" />
 
-    <TextView
-        android:id="@+id/categoryDescTv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/categoryTv"
-        app:layout_constraintTop_toBottomOf="@id/categoryTv"
-        android:layout_marginTop="@dimen/half_padding"
-        tools:text="journal descripiton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
