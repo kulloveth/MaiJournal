@@ -59,11 +59,15 @@ class AddEditJournalFragment : Fragment() {
 
     fun saveJournal(){
         val date = Date().toString()
-        binding?.currentTime?.text=date
       val journal = Journal(category = binding?.categoriesTv?.text?.toString(),title = binding?.titleTv?.text?.toString(),
           desc = binding?.descTv?.text?.toString(),detail = binding?.detailTv?.text?.toString(),updatedAt = date)
 
         jViewModel.saveJournal(journal)
+        binding?.categoriesTv?.setText("")
+        binding?.titleTv?.setText("")
+        binding?.descTv?.setText("")
+        binding?.detailTv?.setText("")
+
 
     }
 
