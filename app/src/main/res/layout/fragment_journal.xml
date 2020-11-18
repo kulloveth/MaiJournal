@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.journal.JournalFragment">
+
     <data>
 
+        <variable
+            name="vm"
+            type="com.example.maijournal.ui.journal.JournalViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.journal.JournalFragment">
+        android:layout_height="match_parent">
 
         <!-- TODO: Update blank fragment layout -->
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/journalRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addJournalFab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/addJournalFab"
             android:layout_marginStart="@dimen/standard_padding"
             android:layout_marginEnd="@dimen/standard_padding"
             android:layout_marginBottom="@dimen/standard_padding"

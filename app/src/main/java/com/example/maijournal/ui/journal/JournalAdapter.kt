@@ -2,16 +2,20 @@ package com.example.maijournal.ui.journal
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.maijournal.JournalItemLayoutBinding
+import com.example.maijournal.R
 import com.example.maijournal.data.model.Journal
-import com.example.maijournal.databinding.JournalItemLayoutBinding
+
 
 class JournalAdapter : ListAdapter<Journal, JournalAdapter.JournalViewHolder>(JOURNAL_DIFFUTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JournalViewHolder {
-        val binding = JournalItemLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding:JournalItemLayoutBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+            R.layout.journal_item_layout,parent,false)
         return JournalViewHolder(binding)
     }
 
@@ -23,8 +27,7 @@ class JournalAdapter : ListAdapter<Journal, JournalAdapter.JournalViewHolder>(JO
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(journal: Journal){
-            binding.titleTv.text = journal.category
-            binding.categoryDescTv.text = journal.desc
+            binding.item = journal
             binding.executePendingBindings()
         }
 
